@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: strapi
+    env: node
+    plan: starter
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    healthCheckPath: /_health
+    envVars:
+      - key: NODE_VERSION
+        value: 12.22.0
+      - key: NODE_ENV
+        value: production
+      - key: tabim
+        sync: false
+      - key: 283718478551921
+        sync: false
+      - key: cFBTZalAaudXU7PMGaGQ_MPmuws
+        sync: false
+      - key: postgres://admin:rshbiA8KbRS4yp7ygLv1A68RfNVTt6nu@dpg-cj83n2djeehc7384mokg-a/tss
+        fromDatabase:
+          name: tss
+          property: connectionString
+      - key: fzUmZix6TnQ9XHbwUZj+dQ==
+        generateValue: true
+      - key: L2/HeBp2oPYVIsHtg5P8iA==
+        generateValue: true
+      - key: t7DQ3R6i9O1NUEbRy4Zdpg==,Uobxcnw8fvh+/LF3g2Gpqg==,CWB76uSUag1/DsMYD0auMw==,JYvcui6tl5oq4RqZJ+2T1g==APP_KEYS
+        generateValue: true
+      - key: MvAFupTzBKhnzj8NeGKedA==
+        generateValue: true
+
+databases:
+  - name: tss
+    plan: starter
